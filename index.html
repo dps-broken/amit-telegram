@@ -54,6 +54,27 @@
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .image-section:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .image-section:nth-child(2) {
+            animation-delay: 0.4s;
         }
 
         .image-section:hover {
@@ -66,6 +87,9 @@
             border-radius: 10px;
             margin-bottom: 20px;
             transition: transform 0.5s ease;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+            animation-delay: 0.3s;
         }
 
         .image-section:hover img {
@@ -146,6 +170,21 @@
             color: #0083b0;
         }
 
+        .top-telegram-button {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .top-telegram-button .telegram-button {
+            position: static;
+            transform: none;
+        }
+
+        .top-telegram-button .telegram-button:hover {
+            transform: translateY(-5px);
+        }
+
         @media (max-width: 768px) {
             .header {
                 padding: 20px; /* Reduced from 40px */
@@ -174,6 +213,13 @@
             <h1>𝙎𝙞𝙠𝙠𝙞𝙢 𝙋𝙧𝙚𝙙𝙞𝙘𝙩𝙞𝙤𝙣 𝙋𝙧𝙤</h1>
             <p>India's Most Popular Colour Trading Tipper, Join Our Official Telegram Channel and Earn Unlimited Money With Amit Bhaii</p>
         </header>
+
+        <div class="top-telegram-button">
+            <a href="https://t.me/+b6LxGZbvI1gzZTM1" target="_blank" class="telegram-button">
+                <i class="fab fa-telegram-plane"></i>
+                Join Now Our Telegram Group
+            </a>
+        </div>
 
         <div class="image-sections">
             <div class="image-section">
