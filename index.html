@@ -26,19 +26,70 @@
 
         .header {
             text-align: center;
-            padding: 30px 0; /* Reduced from 60px to 30px */
-            background: linear-gradient(135deg, #00b4db, #0083b0);
+            padding: 20px 0; /* Reduced from 40px */
+            background: linear-gradient(135deg, #00b4db, #0083b0, #006494);
             color: white;
-            border-radius: 15px; /* Reduced from 20px */
-            margin-bottom: 20px; /* Reduced from 40px */
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Reduced shadow */
+            border-radius: 20px;
+            margin-bottom: 20px; /* Reduced from 30px */
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 45%, rgba(255,255,255,0.1) 50%, transparent 55%);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
         }
 
         .header h1 {
             font-size: 2em; /* Reduced from 2.5em */
             margin-bottom: 10px; /* Reduced from 15px */
             text-transform: uppercase;
-            letter-spacing: 1px; /* Reduced from 2px */
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        .marquee {
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            box-sizing: border-box;
+            animation: marquee 15s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0083b0;
+            }
+            to {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0083b0;
+            }
+        }
+
+        .header p {
+            font-size: 1em; /* Reduced from 1.2em */
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            line-height: 1.6; /* Reduced from 1.8 */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
         }
 
         .image-sections {
@@ -187,7 +238,7 @@
 
         @media (max-width: 768px) {
             .header {
-                padding: 20px; /* Reduced from 40px */
+                padding: 15px;
             }
             
             .image-sections {
@@ -211,7 +262,9 @@
     <div class="container">
         <header class="header">
             <h1>𝙎𝙞𝙠𝙠𝙞𝙢 𝙋𝙧𝙚𝙙𝙞𝙘𝙩𝙞𝙤𝙣 𝙋𝙧𝙤</h1>
-            <p>India's Most Popular Colour Trading Tipper, Join Our Official Telegram Channel and Earn Unlimited Money With Amit Bhaii</p>
+            <div class="marquee">
+                <p>India's Most Popular Colour Trading Tipper, Join Our Official Telegram Channel and Earn Unlimited Money With Amit Bhaii 🚀 Daily Signals 📈 Professional Analysis 💹 24/7 Support</p>
+            </div>
         </header>
 
         <div class="top-telegram-button">
